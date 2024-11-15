@@ -1,106 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="shortcut icon" href="img/favicon2.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <title>Proyecto Clemente</title>
+    <title>Proyecto Amigo fiel</title>
 </head>
 
 <body>
     <a href="#inicio"><i class="fa-solid fa-arrow-up"></i></a>
 
     <header>
-        
-
         <nav>
-            <h1 class="kablammo-font">Amigo fiel</h1>
+            <span class="kablammo-font nombre">Amigo fiel</span>
             <ul class="nav">
                 <li><a href="#rescatados">Nuestros rescatados</a></li>
                 <li class="resenias"><a href="#resenias">Reseñas</a></li>
-                <li  class="quienesSomos"><a href="#quienesSomos">Quienes somos</a></li>
+                <li class="quienesSomos"><a href="#quienesSomos">Quienes somos</a></li>
                 <li><a href="#ayudar">Ayudar</a></li>
                 <li class="contacto"><a href="#contacto">Contacto</a></li>
             </ul>
-            <div class="logo"><i class="fa-solid fa-dog"></i></div>
+            <div class="logo"><i class="fa-solid fa-dog"></i></div> <!-- Luego me dirigirá a los favoritos -->
         </nav>
     </header>
 
     <main>
-
         <section class="blue" id="inicio">
-            <h2 class="dynapuff-font">Te damos la bienvenida a Amigo Fiel</h2>
+            <h1 class="dynapuff-font">Te damos la bienvenida a <span class="kablammo-font">Amigo fiel</span></h1>
 
-            <p class="roboto-regular"> En Amigo Fiel, somos más que un refugio; somos una comunidad comprometida con el
-                bienestar y la
-                felicidad de los animales. Nuestra misión es proporcionar un hogar seguro y amoroso a perros y gatos que
-                han sido abandonados, maltratados o que simplemente necesitan una segunda oportunidad en la vida.
-                Creemos que cada animal merece una vida llena de cariño y cuidado, y trabajamos incansablemente para
-                hacer de esto una realidad.</p>
+            <p class="dynapuff-font-400"> En Amigo Fiel, somos más que un refugio; somos una comunidad comprometida con
+                el bienestar y la felicidad de los animales. Nuestra misión es proporcionar un hogar seguro y amoroso a perros y gatos que
+                han sido abandonados, maltratados o que simplemente necesitan una segunda oportunidad en la vida. Creemos que cada animal merece una vida llena de cariño y cuidado, y trabajamos incansablemente para hacer de esto una realidad.</p>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Hu22mWi8jVQ?si=_5JHDmvY_bSQecOd"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </section>
 
-        <section class="melon"  id="rescatados">
+        <section class="melon" id="rescatados">
             <h2 class="dynapuff-font">Nuestros rescatados</h2>
 
             <div class="card-container">
                 <div class="card">
-                    <img src="https://www.elcampitorefugio.org/imgs/uploaded/Thumb_536835.jpg" alt="Foto">
+                    <img src="https://www.elcampitorefugio.org/imgs/uploaded/Thumb_536835.jpg" alt="Foto de Max">
                     <h2>Nombre: Max</h2>
                     <p>Edad: 2 años</p>
                     <p>Tamaño: Mediano</p>
                     <button class="favorite-btn">Agregar a Favoritos</button>
-                    <button class="info-btn">
-                        <a href="#contacto">Más Información</a>
-                    </button>
+                    <a href="#contacto"><button class="info-btn">
+                            Más Información
+                        </button></a>
                 </div>
                 <div class="card">
-                    <img src="https://www.elcampitorefugio.org/imgs/uploaded/Thumb_311320.jpg" alt="Foto">
+                    <img src="img/Rex.jpg" alt="Foto de Rex">
+                    <h2>Nombre: Rex</h2>
+                    <p>Edad: 4 años</p>
+                    <p>Tamaño: Mediano</p>
+                    <button class="favorite-btn">Agregar a Favoritos</button>
+                    <a href="#contacto">
+                        <button class="info-btn"> Más Información </button>
+                    </a>
+                </div>
+                <div class="card">
+                    <img src="img/Tito.jpg" alt="Foto de Tito">
+                    <h2>Nombre: Tito</h2>
+                    <p>Edad: 2 años</p>
+                    <p>Tamaño: Grande</p>
+                    <button class="favorite-btn">Agregar a Favoritos</button>
+                    <a href="#contacto">
+                        <button class="info-btn"> Más Información </button>
+                    </a>
+                </div>
+                <div class="card">
+                    <img src="img/Luna.jpg" alt="Foto de Luna">
                     <h2>Nombre: Luna</h2>
                     <p>Edad: 3 años</p>
                     <p>Tamaño: Grande</p>
                     <button class="favorite-btn">Agregar a Favoritos</button>
-                    <button class="info-btn">
-                        <a href="#contacto">Más Información</a>
-                    </button>
+                    <a href="#contacto">
+                        <button class="info-btn"> Más Información </button>
+                    </a>
                 </div>
                 <div class="card">
-                    <img src="https://www.elcampitorefugio.org/imgs/uploaded/Thumb_311320.jpg" alt="Foto">
-                    <h2>Nombre: Luna</h2>
+                    <img src="img/Sam.jpg" alt="Foto de Sam">
+                    <h2>Nombre: Sam</h2>
+                    <p>Edad: 4 años</p>
+                    <p>Tamaño: Mediano</p>
+                    <button class="favorite-btn">Agregar a Favoritos</button>
+                    <a href="#contacto">
+                        <button class="info-btn"> Más Información </button>
+                    </a>
+                </div>
+                <div class="card">
+                    <img src="img/Tom.jpg" alt="Foto de Tom">
+                    <h2>Nombre: Tom</h2>
                     <p>Edad: 3 años</p>
                     <p>Tamaño: Grande</p>
                     <button class="favorite-btn">Agregar a Favoritos</button>
-                    <button class="info-btn">
-                        <a href="#contacto">Más Información</a>
-                    </button>
-                </div>
-                <div class="card">
-                    <img src="https://www.elcampitorefugio.org/imgs/uploaded/Thumb_311320.jpg" alt="Foto">
-                    <h2>Nombre: Luna</h2>
-                    <p>Edad: 3 años</p>
-                    <p>Tamaño: Grande</p>
-                    <button class="favorite-btn">Agregar a Favoritos</button>
-                    <button class="info-btn">
-                        <a href="#contacto">Más Información</a>
-                    </button>
+                    <a href="#contacto">
+                        <button class="info-btn"> Más Información </button>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="purpura"  id="resenias">
+        <section class="purpura " id="resenias">
             <h2 class="dynapuff-font">Reseñas</h2>
             <div class="grid">
                 <div class="res">
                     <h3>Jane Doe</h3>
-                    <p>"Adoptar a Luna fue la mejor decisión que tomamos. Amigo Fiel hizo que el proceso fuera sencillo
-                        y lleno de amor."</p>
+                    <p>"Adoptar a Luna fue la mejor decisión que tomamos. Amigo Fiel hizo que el proceso fuera sencillo y lleno de amor."</p>
                     <p>10/11/2023</p>
                 </div>
                 <div class="res">
                     <h3>John Smith</h3>
-                    <p>"Gracias a Amigo Fiel, Max encontró un hogar. No podríamos estar más felices con nuestro nuevo
-                        amigo."</p>
+                    <p>"Gracias a Amigo Fiel, Max encontró un hogar. No podríamos estar más felices con nuestro nuevo amigo."</p>
                     <p>05/12/2023</p>
                 </div>
                 <div class="res">
@@ -108,77 +127,123 @@
                     <p>"El equipo de Amigo Fiel es increíble. Nos apoyaron en cada paso de la adopción de Rocky."</p>
                     <p>15/01/2024</p>
                 </div>
+                <div class="res">
+                    <h3>Laura Pérez</h3>
+                    <p>"Adoptar a Simba a través de Amigo Fiel cambió nuestras vidas. El proceso fue rápido y lleno de cariño."</p>
+                    <p>25/02/2024</p>
+                </div>
+                <div class="res">
+                    <h3>Carlos Fernández</h3>
+                    <p>"Gracias a Amigo Fiel, encontramos a Toby, un compañero leal y amoroso. ¡Estamos muy agradecidos!"</p>
+                    <p>14/03/2024</p>
+                </div>
+                <div class="res">
+                    <h3>Lucía Martínez</h3>
+                    <p>"El equipo de Amigo Fiel hizo que la adopción de Bella fuera una experiencia maravillosa y sin complicaciones."</p>
+                    <p>08/04/2024</p>
+                </div>
+                <div class="res">
+                    <h3>Andrés Gómez</h3>
+                    <p>"Adoptar a Rocky con la ayuda de Amigo Fiel fue la mejor decisión. El proceso fue fácil y lleno de apoyo."</p>
+                    <p>20/05/2024</p>
+                </div>
+                <div class="res">
+                    <h3>Emma López</h3>
+                    <p>"Adoptar a Nala a través de Amigo Fiel fue una experiencia maravillosa. Nos brindaron todo el apoyo que necesitábamos."</p>
+                    <p>02/06/2024</p>
+                </div>
+                <div class="res">
+                    <h3>Roberto Ruiz</h3>
+                    <p>"Estamos encantados con la adopción de Bruno. Amigo Fiel hizo todo el proceso muy fácil y especial."</p>
+                    <p>19/07/2024</p>
+                </div>
+
             </div>
         </section>
 
-        <section class="saffron"  id="quienesSomos">
-            <h3 class="dynapuff-font">¿Quiénes Somos?</h3>
-            <p class="roboto-regular">Amigo Fiel nació del amor y la pasión por los animales. Somos un grupo de
-                voluntarios dedicados,
-                veterinarios, y amantes de los animales que unen esfuerzos para rescatar, rehabilitar y reubicar a
-                nuestros amigos peludos en hogares donde recibirán el amor que merecen. Cada animal que llega a nuestro
-                refugio recibe atención médica, alimentación adecuada, y mucho cariño mientras espera encontrar su hogar
-                definitivo.</p>
+        <section class="saffron centrado-vertical" id="quienesSomos">
+            <h2 class="dynapuff-font">¿Quiénes Somos?</h2>
+            <p class="dynapuff-font-400">Amigo Fiel nació del amor y la pasión por los animales. Somos un grupo de voluntarios dedicados,
+                veterinarios, y amantes de los animales que unen esfuerzos para rescatar, rehabilitar y reubicar a nuestros amigos peludos en hogares donde recibirán el amor que merecen. Cada animal que llega a nuestro refugio recibe atención médica, alimentación adecuada, y mucho cariño mientras espera encontrar su hogar definitivo.</p>
+
+            <!--Agrego el a porque freepik me pide citarlo-->
+            <a href="https://www.freepik.es/foto-gratis/mujeres-jugando-perro_12976427.htm#fromView=search&page=1&position=37&uuid=23e71294-78fd-44fe-9b2b-f6784fd5a322">
+                <img src="img/nosotros.jpg" alt="Imagen de nosotras">
+            </a>
         </section>
 
 
-        <section class="aquamarine"  id="ayudar">
-            <h3 class="dynapuff-font">Adopta, No Compres</h3>
-            <p class="roboto-regular">Adoptar un animal de compañía es una de las decisiones más gratificantes que
-                puedes tomar. No solo
-                estarás dando una nueva oportunidad a un animal necesitado, sino que también estarás liberando un
-                espacio en nuestro refugio para que podamos ayudar a otro en necesidad. En Amigo Fiel, te acompañamos
-                durante todo el proceso de adopción para asegurarnos de que encuentres al compañero perfecto para tu
-                familia.</p>
+        <section class="aquamarine centrado-vertical" id="ayudar">
+            <h2 class="dynapuff-font">Adopta, No Compres</h2>
+            <p class="dynapuff-font-400">Adoptar un animal de compañía es una de las decisiones más gratificantes que
+                puedes tomar. No solo estarás dando una nueva oportunidad a un animal necesitado, sino que también estarás liberando un
+                espacio en nuestro refugio para que podamos ayudar a otro en necesidad. En Amigo Fiel, te acompañamos durante todo el proceso de adopción para asegurarnos de que encuentres al compañero perfecto para tu familia.</p>
 
-            <h3 class="dynapuff-font">Cómo Puedes Ayudar</h3>
-            <p class="roboto-regular">Hay muchas maneras en las que puedes contribuir a nuestra causa:</p>
+            <h2 class="dynapuff-font ayudar">Cómo Puedes Ayudar</h2>
+            <p class="dynapuff-font-400">Hay muchas maneras en las que puedes contribuir a nuestra causa:</p>
             <ol>
-                <li class="roboto-regular"><strong>Adopta</strong>: Da un hogar permanente a uno de nuestros animales.
+                <li class="dynapuff-font-400"><strong>Adopta</strong>: Da un hogar permanente a uno de nuestros rescatados.
                 </li>
-                <li class="roboto-regular"><strong>Voluntariado</strong>: Únete a nuestro equipo de voluntarios y ayuda
-                    en el cuidado diario de
-                    nuestros animales.</li>
-                <li class="roboto-regular"><strong>Donaciones</strong>: Contribuye con alimentos, medicamentos, o
-                    donaciones monetarias para
+                <li class="dynapuff-font-400"><strong>Voluntariado</strong>: Únete a nuestro equipo de voluntarios y ayuda en el cuidado diario de nuestros rescatados.</li>
+                <li class="dynapuff-font-400"><strong>Donaciones</strong>: Contribuye con alimentos, medicamentos, o donaciones monetarias para
                     apoyar nuestro trabajo.</li>
-                <li class="roboto-regular"><strong>Difusión</strong>: Comparte nuestras historias y animales disponibles
-                    para adopción en tus
-                    redes sociales.</li>
+                <li class="dynapuff-font-400"><strong>Difusión</strong>: Comparte nuestras historias y rescatados disponibles
+                    para adopción en tus redes sociales.</li>
             </ol>
 
-            <p class="roboto-regular">Gracias por apoyar a Amigo Fiel y por considerar la adopción como la mejor opción.
-                Juntos, podemos hacer
-                una
-                diferencia en la vida de muchos animales.</p>
+            <p class="dynapuff-font-400 ayudar">Gracias por apoyar a Amigo Fiel y por considerar la adopción como la mejor opción.
+                Juntos, podemos hacer una diferencia en la vida de muchos animales.</p>
         </section>
 
 
 
 
-        <section class="violeta" id="contacto">
+        <section class="violeta centrado-vertical" id="contacto">
             <h2 class="dynapuff-font">Contáctanos</h2>
-            <h3 class="dynapuff-font"> Si estás interesado en adoptar o deseas más información sobre cómo puedes ayudar,
-                no dudes en
-                contactarnos:
+            <h3 class="dynapuff-font"> Si tienes interés en adoptar o deseas más información sobre cómo puedes ayudar, no dudes en contactarnos:
             </h3>
             <form action="https://formspree.io/f/mgeblwga" method="POST">
 
-                <label for="name" class="roboto-regular">Nombre:</label>
-                <input type="text" id="name" name="name" required> <br>
+                <label for="nombre" class="roboto-regular">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required> <br>
 
                 <label for="email" class="roboto-regular">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" required> <br>
 
-                <label for="message" class="roboto-regular">Mensaje:</label>
-                <textarea id="message" name="message" rows="4" required></textarea> <br>
+                <label for="mensaje" class="roboto-regular">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea> <br>
 
                 <button type="submit" class="roboto-regular">Enviar</button>
             </form>
         </section>
     </main>
 
-    <footer></footer>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2 class="dynapuff-font">Sobre Nosotros</h2>
+                <p class="roboto-regular">Amigo Fiel es un refugio comprometido con el bienestar y la adopción de animales abandonados. Únete a nuestra misión de encontrar hogares amorosos para cada uno de nuestros amigos peludos.</p>
+            </div>
+            <div class="footer-section">
+                <h2 class="dynapuff-font">Enlaces Útiles</h2>
+                <ul>
+                    <li><a href="#rescatados" class="roboto-regular">Nuestros rescatados</a></li>
+                    <li><a href="#ayudar" class="roboto-regular">Ayudar</a></li>
+                    <li><a href="#contacto" class="roboto-regular">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2 class="dynapuff-font">Nuestras redes</h2>
+                <i class="fa-brands fa-facebook-f fa-xl"></i>
+                <i class="fa-brands fa-x-twitter fa-xl"></i>
+                <i class="fa-brands fa-instagram fa-xl"></i>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Amigo Fiel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
 
     <script src="https://kit.fontawesome.com/3e96da98fd.js" crossorigin="anonymous"></script>
 </body>

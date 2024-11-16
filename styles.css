@@ -195,6 +195,7 @@ section {
 
 ol {
     list-style-type: none;
+    padding-left: 0;
 }
 
 .centrado-vertical {

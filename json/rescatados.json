@@ -1,0 +1,65 @@
+{
+    "rescatados": [
+      {
+        "id": 1,
+        "nombre": "Max",
+        "edad": "2 años",
+        "castracion": true,
+        "vacunas": true,
+        "tamaño": "Mediano",
+        "info": "A sus 2 años, Max es un perro alegre y lleno de energía. Fue encontrado deambulando por las calles, pero eso no ha apagado su espíritu juguetón. Le encanta correr y jugar con otros perros, y está siempre listo para una nueva aventura. Max busca una familia que pueda igualar su entusiasmo por la vida.",
+        "img": "img/Max.jpg"
+      },
+      {
+        "id": 2,
+        "nombre": "Rex",
+        "edad": "4 años",
+        "castracion": true,
+        "vacunas": true,
+        "tamaño": "Mediano",
+        "info": "Rex, un perro mediano de 4 años, fue rescatado de un hogar donde no recibía el cuidado que merecía. A pesar de su pasado, Rex es un perro muy cariñoso y leal. Es tranquilo y disfruta de las tardes soleadas, relajándose junto a sus cuidadores. Rex está listo para compartir su tranquilidad y amor con su nueva familia.",
+        "img": "img/Rex.jpg"
+      },
+      {
+        "id": 3,
+        "nombre": "Tom",
+        "edad": "3 años",
+        "castracion": true,
+        "vacunas": true,
+        "tamaño": "Grande",
+        "info": "Tom, de 3 años y tamaño grande, llegó al refugio después de ser encontrado solo en un parque. Este gigante amable tiene un corazón de oro y una debilidad por los abrazos. Tom es un perro muy afectuoso y protector, ideal para una familia que busque un compañero leal y confiable.",
+        "img": "img/Tom.jpg"
+      },
+      {
+        "id": 4,
+        "nombre": "Sam",
+        "edad": "4 años",
+        "castracion": true,
+        "vacunas": true,
+        "tamaño": "Mediano",
+        "info": "Sam, otro adorable perro mediano de 4 años, fue rescatado de una situación de abandono. A pesar de sus experiencias, Sam ha mantenido una actitud positiva y alegre. Le encanta jugar con juguetes y recibir mimos. Sam está en busca de una familia que pueda brindarle el cariño y la atención que se merece.",
+        "img": "img/Sam.jpg"
+      },
+      {
+        "id": 5,
+        "nombre": "Luna",
+        "edad": "3 años",
+        "castracion": true,
+        "vacunas": true,
+        "tamaño": "Grande",
+        "info": "Luna, una perra grande de 3 años, fue rescatada junto con su hermano Tito. Es una perra noble y afectuosa que adora correr y jugar al aire libre. Luna sueña con un hogar donde pueda correr libremente y recibir todo el amor que tiene para dar.",
+        "img": "img/Luna.jpg"
+      },
+      {
+        "id": 6,
+        "nombre": "Tito",
+        "edad": "2 años",
+        "castracion": true,
+        "vacunas": true,
+        "tamaño": "Grande",
+        "info": "Tito, también de tamaño grande y 2 años de edad, es el hermano de Luna. Tito es un perro vivaz y lleno de energía. Le encanta explorar y es muy curioso. Busca una familia que pueda mantenerlo activo y a la vez ofrecerle un refugio seguro y amoroso.",
+        "img": "img/Tito.jpg"
+      }
+    ]
+  }
+  

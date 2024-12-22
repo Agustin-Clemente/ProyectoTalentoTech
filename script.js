@@ -1,3 +1,82 @@
+//CARDS DINAMICAS
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('json/rescatados.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la respuesta: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const cardContainer = document.querySelector(".card-container");
+
+            data.rescatados.forEach(rescatado => {
+                const card = document.createElement("div");
+                card.className = "card";
+
+                const img = document.createElement("img");
+                img.src = rescatado.img;
+                img.alt = "Foto de " + rescatado.nombre;
+                card.appendChild(img);
+
+                const name = document.createElement("h2");
+                name.innerHTML = "<strong>Nombre:</strong> " + rescatado.nombre;
+                card.appendChild(name);
+
+                const edad = document.createElement("p");
+                edad.innerHTML = "<strong>Edad:</strong> " + rescatado.edad;
+                card.appendChild(edad);
+
+                const tamaño = document.createElement("p");
+                tamaño.innerHTML = "<strong>Tamaño:</strong> " + rescatado.tamaño;
+                card.appendChild(tamaño);
+
+                const vacunas = document.createElement("p");
+                vacunas.textContent = `${rescatado.vacunas? "Vacunas al día" : "Sin vacunas"}`;
+                card.appendChild(vacunas);
+
+                const castracion = document.createElement("p");
+                castracion.textContent = `${rescatado.castracion? "Castrado/a" : "Sin castrar"}`;
+                card.appendChild(castracion);
+
+                const info = document.createElement("p");
+                info.id = `informacion${rescatado.id}`;
+                info.className = "informacion";
+                info.innerHTML = "<strong>Información:</strong> " + rescatado.info;
+                card.appendChild(info);
+
+                const favoriteBtn = document.createElement("button");
+                favoriteBtn.className = "favorite-btn";
+                favoriteBtn.textContent = "Agregar a Favoritos";
+                card.appendChild(favoriteBtn);
+
+                const infoBtn = document.createElement("button");
+                infoBtn.className = "info-btn";
+                infoBtn.textContent = "Más Información";
+                infoBtn.addEventListener("click", function() { 
+                const informacion = document.getElementById(`informacion${rescatado.id}`);
+                if (informacion.style.display === "none" || informacion.style.display === "") { 
+                    informacion.style.display = "block"; 
+                    infoBtn.textContent = "Cerrar Información";
+                } else { 
+                    informacion.style.display = "none"; 
+                    infoBtn.textContent = "Más Información";
+                } 
+                }
+            );
+                card.appendChild(infoBtn);
+
+                cardContainer.appendChild(card);
+            });
+        })
+        .catch(error => {
+            console.error('Ocurrió un problema al realizar Fetch:', error);
+        });
+});
+
+
+
+
 // VALIDACIONES FORM
 
 let nombre = document.getElementById("nombre");

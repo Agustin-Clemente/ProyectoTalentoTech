@@ -193,6 +193,10 @@ section {
 
 }
 
+.champagne-pink{
+    background-color: #e9d2c0;
+}
+
 ol {
     list-style-type: none;
     padding-left: 0;
@@ -203,6 +207,13 @@ ol {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#visitanos{
+    min-height: 100vh;
+    /* padding: 0; */
+
+    min-height: 25vh;
 }
 
 /*CARDS*/
@@ -261,6 +272,10 @@ ol {
     text-decoration: none;
 }
 
+.card-container .card a{
+    text-decoration: none;
+}
+
 /*RESEÑAS*/
 .grid {
     display: grid;
@@ -311,7 +326,11 @@ ol li.dynapuff-font-400 {
     margin-top: 56px;
 }
 
-#contacto form input {
+/* #contacto form input {
+    margin-bottom: 48px;
+} */
+
+#contacto form span {
     margin-bottom: 48px;
 }
 
@@ -341,6 +360,10 @@ input, textarea {
     box-sizing: border-box;
 }
 
+input:focus, textarea:focus {
+    outline: none;
+}
+
 button {
     padding: 10px;
     background-color: #3700b3;
@@ -353,6 +376,64 @@ button {
 button:hover {
     background-color: #4903ed;
 }
+
+form span{
+    color: red;
+}
+
+/*API*/
+.map-weather-section {
+    display: flex; /* Utiliza flexbox para dividir en dos partes iguales */
+    height: 50%;
+    justify-content: space-around; /* Espacio alrededor de los elementos */ 
+    align-items: center; /* Alineación vertical */ 
+
+}
+
+.weather-container {
+    padding: 20px;
+    flex: 0 0 25%; /* Cada contenedor ocupa el 45% del ancho del contenedor padre */ 
+    height: 100%; /* Altura fija */
+}
+
+.map-container{
+    flex: 0 0 50%;
+    padding: 20px; 
+    height: 100%; /* Altura fija */
+   
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.weather-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     /* Fondo claro para contraste */
+    /* width: 100%; */
+    /* height: 100%; */
+}
+
+.container {
+    text-align: center;
+}
+
+.ciudades li {
+    list-style-type: none;
+}
+
+.ciudades{
+    padding: 0;
+}
+
+#descripcion{
+    text-transform: capitalize;
+}
+
 
 
 

@@ -636,3 +636,9 @@ footer {
         display: none;
     }
 }
+
+@media (max-width: 375px) {
+    .ayudarNav {
+        display: none;
+    }
+}

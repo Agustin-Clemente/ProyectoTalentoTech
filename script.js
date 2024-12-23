@@ -1,5 +1,5 @@
 //CARDS DINAMICAS
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     fetch('json/rescatados.json')
         .then(response => {
             if (!response.ok) {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             data.rescatados.forEach(rescatado => {
                 const card = document.createElement("div");
-                card.className = "card";
+                card.className = "card open-sans-400";
 
                 const img = document.createElement("img");
                 img.src = rescatado.img;
@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 card.appendChild(img);
 
                 const name = document.createElement("h2");
-                name.innerHTML = "<strong>Nombre:</strong> " + rescatado.nombre;
+                name.className ="dynapuff-font";
+                name.innerHTML =  rescatado.nombre;
                 card.appendChild(name);
 
                 const edad = document.createElement("p");
@@ -32,11 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 card.appendChild(tamaño);
 
                 const vacunas = document.createElement("p");
-                vacunas.textContent = `${rescatado.vacunas? "Vacunas al día" : "Sin vacunas"}`;
+                vacunas.textContent = `${rescatado.vacunas ? "Vacunas al día" : "Sin vacunas"}`;
                 card.appendChild(vacunas);
 
                 const castracion = document.createElement("p");
-                castracion.textContent = `${rescatado.castracion? "Castrado/a" : "Sin castrar"}`;
+                castracion.textContent = `${rescatado.castracion ? "Castrado/a" : "Sin castrar"}`;
                 card.appendChild(castracion);
 
                 const info = document.createElement("p");
@@ -47,45 +48,97 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 const favoriteBtn = document.createElement("button");
                 favoriteBtn.className = "favorite-btn";
-                favoriteBtn.textContent = "Agregar a Favoritos";
+
+                /* favoriteBtn.textContent = "Agregar a Favoritos";
+                favoriteBtn.addEventListener("click", function () {
+                let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+                favoritos.push(rescatado);  */
+
+                let favoritos = JSON.parse(localStorage.getItem('favoritos')) || []; 
+                const enFavoritos = favoritos.some(fav => fav.id === rescatado.id);
+                favoriteBtn.textContent = enFavoritos ? "Quitar de Favoritos" : "Agregar a Favoritos"; 
+                //const index = favoritos.findIndex(fav => fav.id === rescatado.id); 
+                    if (enFavoritos) {
+                        favoriteBtn.classList.add("rojo")
+                    }
+                favoriteBtn.addEventListener("click", function () { 
+                    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+                    const index = favoritos.findIndex(fav => fav.id === rescatado.id); 
+                    if (index !== -1) { 
+                        favoritos.splice(index, 1); 
+                        favoriteBtn.textContent = "Agregar a Favoritos"; 
+                        favoriteBtn.classList.remove("rojo")
+
+                        favoriteBtn.classList.add("favorite-btn")
+                    } else { 
+                        favoritos.push(rescatado); 
+                        favoriteBtn.textContent = "Quitar de Favoritos"; 
+                        favoriteBtn.classList.remove("favorite-btn")
+                        favoriteBtn.classList.add("rojo")
+                    }
+
+
+                localStorage.setItem('favoritos', JSON.stringify(favoritos)); 
+                contarFavoritos();
+                });
+                
                 card.appendChild(favoriteBtn);
 
                 const infoBtn = document.createElement("button");
                 infoBtn.className = "info-btn";
                 infoBtn.textContent = "Más Información";
-                infoBtn.addEventListener("click", function() { 
-                const informacion = document.getElementById(`informacion${rescatado.id}`);
-                if (informacion.style.display === "none" || informacion.style.display === "") { 
-                    informacion.style.display = "block"; 
-                    infoBtn.textContent = "Cerrar Información";
-                } else { 
-                    informacion.style.display = "none"; 
-                    infoBtn.textContent = "Más Información";
-                } 
+
+
+               /*  infoBtn.addEventListener("click", function () {
+                    const informacion = document.getElementById(`informacion${rescatado.id}`);
+                    if (informacion.style.display === "none" || informacion.style.display === "") {
+                        informacion.style.display = "block";
+                        infoBtn.textContent = "Cerrar Información";
+                    } else {
+                        informacion.style.display = "none";
+                        infoBtn.textContent = "Más Información";
+                    }
                 }
-            );
+                ); */
+
+                infoBtn.addEventListener("click", function () { 
+                    const informacion = document.getElementById(`informacion${rescatado.id}`); 
+                    informacion.classList.toggle("visible"); 
+                    infoBtn.textContent = informacion.classList.contains("visible") ? "Cerrar Información" : "Más Información"; 
+                });
+
+
                 card.appendChild(infoBtn);
 
                 cardContainer.appendChild(card);
             });
+            
         })
         .catch(error => {
             console.error('Ocurrió un problema al realizar Fetch:', error);
         });
+
+        contarFavoritos()
+        clima()
+
 });
 
-
+function contarFavoritos() {
+    const favoritos = JSON.parse(localStorage.getItem('favoritos')) || []; 
+    const cantFavoritos = document.getElementById('cantFavoritos'); 
+    cantFavoritos.textContent = favoritos.length;
+}
 
 
 // VALIDACIONES FORM
 
 let nombre = document.getElementById("nombre");
 let nombreError = document.getElementById("nombreError");
-let email = document.getElementById("email"); 
-let emailError = document.getElementById("emailError"); 
-let emailRegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
-let mensaje = document.getElementById("mensaje"); 
-let mensajeError = document.getElementById("mensajeError"); 
+let email = document.getElementById("email");
+let emailError = document.getElementById("emailError");
+let emailRegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+let mensaje = document.getElementById("mensaje");
+let mensajeError = document.getElementById("mensajeError");
 
 function validarNombre() {
     if (nombre.value.length < 3 || /\d/.test(nombre.value)) {
@@ -99,24 +152,24 @@ function validarNombre() {
 
 
 
-function validarEmail() { 
-    if (!emailRegExp.test(email.value)) { 
-        emailError.textContent = "Por favor, ingresa un correo electrónico válido."; 
+function validarEmail() {
+    if (!emailRegExp.test(email.value)) {
+        emailError.textContent = "Por favor, ingresa un correo electrónico válido.";
         email.style.border = "3px solid red";
-    } else { 
-        emailError.textContent = ""; 
+    } else {
+        emailError.textContent = "";
         email.style.border = "3px solid green";
-    } 
+    }
 }
 
-function validarMensaje() { 
-    if (mensaje.value.length < 3) { 
-        mensajeError.textContent = "El mensaje debe tener al menos 3 caracteres."; 
+function validarMensaje() {
+    if (mensaje.value.length < 3) {
+        mensajeError.textContent = "El mensaje debe tener al menos 3 caracteres.";
         mensaje.style.border = "3px solid red";
-    } else { 
-        mensajeError.textContent = ""; 
-        mensaje.style.border = "3px solid green"; 
-    } 
+    } else {
+        mensajeError.textContent = "";
+        mensaje.style.border = "3px solid green";
+    }
 }
 
 nombre.addEventListener("input", validarNombre);
@@ -167,6 +220,6 @@ function clima() {
         });
 }
 
-window.onload = clima;
+// window.onload = clima
 
 

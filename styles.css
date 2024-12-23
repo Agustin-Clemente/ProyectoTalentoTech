@@ -104,12 +104,17 @@ h1 {
 
 /*NAV*/
 
+.nav.roboto-regular {
+    font-size: 14px;
+}
+
 .nombre {
     color: white;
     margin: 0;
     flex: 1;
     text-align: left;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .nav-container {
@@ -152,6 +157,7 @@ div.logo {
 .fa-dog{
     position: relative;
     display: inline-block;
+    cursor: pointer;
 }
 
 .cantFavoritos { 
@@ -243,7 +249,7 @@ ol {
 }
 
 /*CARDS*/
-.card-container {
+.card-container, .favoritos-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -309,7 +315,7 @@ ol {
 }
 
 .rojo:hover{
-    background-color: beige;
+    background-color: #facbcb;
 }
 
 .info-btn {
@@ -322,9 +328,11 @@ ol {
     text-decoration: none;
 }
 
-.card-container .card a{
+.card-container .card a, .favoritos-container .card a {
     text-decoration: none;
 }
+
+
 
 /* .informacion{
     display: none;
@@ -342,6 +350,73 @@ ol {
     opacity: 1;
 }
 
+
+/*FAVORITOS*/
+.apadrinar-text { 
+    text-align: center; 
+    font-size: 1.2em; 
+    margin: 10px 0; 
+} 
+
+.donacion-container { 
+   /*  display: flex; 
+    justify-content: center; 
+    align-items: center;  */
+    margin: 10px 0; 
+    border-radius: 12px;
+    border: solid 2px green;
+    background-color: lightgreen;
+    font-weight: bold;
+    padding-bottom: 12px;
+} 
+
+.decrement-btn, .increment-btn { 
+    padding: 10px; 
+    margin: 0 5px; 
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    cursor: pointer; 
+} 
+
+.donacion-valor { 
+    font-size: 1.2em; 
+    font-weight: bold; 
+} 
+
+.mensual { 
+    text-align: center; 
+    margin-top: 10px; 
+}
+
+.aceptar-btn { 
+    padding: 10px; 
+    margin: 10px 0; 
+    background-color: forestgreen;
+   width: 80%;
+    border-radius: 5px; 
+    
+}
+
+.aceptar-btn:hover, .increment-btn:hover, .decrement-btn:hover { 
+    background-color: green; 
+
+}
+
+.increment-btn, .decrement-btn{
+    background-color: forestgreen;
+
+}
+
+.sinFavoritos{
+    font-size: 26px;
+  color: white;
+}
+
+.img-sin-favoritos{
+    width: 50%;
+  border-radius: 50%;
+}
 
 /*RESEÑAS*/
 .grid {
@@ -559,15 +634,22 @@ footer {
 }
 
 /*NAV BAR RESPONSIVE*/
-@media (max-width: 720px) {
+@media (max-width: 899px) {
 
-    .quienesSomos, .resenias {
+    .visitanos {
+        display: none;
+    }
+}
+
+@media (max-width: 725px) {
+
+    .quienesSomos, .resenias, .visitanos {
         display: none;
     }
 }
 
 @media (max-width: 600px) {
-    .contacto {
+    .contacto, .visitanos {
         display: none;
     }
 }

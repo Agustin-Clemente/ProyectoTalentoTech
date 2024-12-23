@@ -65,16 +65,46 @@ document.addEventListener("DOMContentLoaded", function () {
                     let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
                     const index = favoritos.findIndex(fav => fav.id === rescatado.id); 
                     if (index !== -1) { 
+                        Swal.fire({ 
+                            title: '¿Estás seguro/a?', 
+                            text: `Vas a quitar a ${rescatado.nombre} de tus favoritos.`, 
+                            icon: 'warning', 
+                            showCancelButton: true, 
+                            confirmButtonColor: '#e39857', 
+                            cancelButtonColor: '#d33', 
+                            confirmButtonText: 'Sí, quitarlo/a', 
+                            cancelButtonText: 'Cancelar' 
+                        }).then((result) => { 
+                            if (result.isConfirmed) {
                         favoritos.splice(index, 1); 
                         favoriteBtn.textContent = "Agregar a Favoritos"; 
-                        favoriteBtn.classList.remove("rojo")
-
-                        favoriteBtn.classList.add("favorite-btn")
+                        favoriteBtn.classList.remove("rojo");
+                        localStorage.setItem('favoritos', JSON.stringify(favoritos)); 
+                        contarFavoritos();     
+                        favoriteBtn.classList.add("favorite-btn");
+                        Swal.fire({ 
+                            title: '¡Eliminado/a!', 
+                            text: `${rescatado.nombre} ha sido eliminado/a de tus favoritos.`, 
+                            icon: 'success', 
+                            confirmButtonColor: '#a5dc86',
+                            confirmButtonText: 'OK' 
+                        });
+                    }
+                })
                     } else { 
                         favoritos.push(rescatado); 
                         favoriteBtn.textContent = "Quitar de Favoritos"; 
                         favoriteBtn.classList.remove("favorite-btn")
                         favoriteBtn.classList.add("rojo")
+                        localStorage.setItem('favoritos', JSON.stringify(favoritos)); 
+                        contarFavoritos();
+                        Swal.fire({ 
+                            title: '¡Añadido!', 
+                            text: `Has añadido a ${rescatado.nombre} a tus favoritos.`, 
+                            icon: 'success', 
+                            confirmButtonText: 'OK' ,
+                            confirmButtonColor: '#a5dc86'
+                        });
                     }
 
 
@@ -221,5 +251,14 @@ function clima() {
 }
 
 // window.onload = clima
+
+//REDIRECCION
+document.querySelector(".fa-dog").addEventListener("click", function () {
+    window.location.href = "./favoritos.html";
+});
+
+document.querySelector(".nombre").addEventListener("click", function () {
+    window.location.href = "./index.html";
+});
 
 

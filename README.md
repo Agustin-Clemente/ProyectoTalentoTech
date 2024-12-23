@@ -4,13 +4,15 @@
 ## 📝 Descripción del Proyecto
 
 Proyecto realizado en 2024 como TP Final del Curso Frontend JS dictado por Talento Tech.
-La paleta de colores elegida la obtuve de Coolors, los íconos de FontAwesome, y las tipografías de Google Fonts.
+La paleta de colores elegida la obtuve de Coolors, los íconos de FontAwesome, y las tipografías de Google Fonts. También utilicé SweetAlert, y con Js agregué eventos, generé un HTML dinámico manipulando el DOM, y mantuve la persistencia con LocalStorage. Con CSS pude realizar una aplicación responsiva y agradable a la vista para ofrecer una mejor experiencia de usuario.
 
 ## 🔨 Funcionalidades 
 
-- **Skill 1** : Estructura básica HTML.
-- **Skill 2** : Creación de estilos con CSS, fuentes externas, etc.
-- **Skill 3** : Deploy 
+- **Skill 1** : Estructura básica semántica HTML.
+- **Skill 2** : Aplicación de estilos con CSS, fuentes externas, responsividad.
+- **Skill 3** : Js: validación de formularios, manipulación de DOM, eventos, consumo de API REST con fetch, persistencia en localStorage.
+- **Skill 4** : Utilización de librería externa SweetAlert.
+- **Skill 5** : Deploy  
 
 
 ##  🖊️  Autores y contactos

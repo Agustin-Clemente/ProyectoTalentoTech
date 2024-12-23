@@ -101,7 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+            const valoresDonacion = [1000, 2000, 5000, 10000];
+            let indiceActual = 0;
             
             const apadrinarText = document.createElement("p");
             apadrinarText.className = "apadrinar-text";
@@ -117,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const valorDisplay = document.createElement("span");
             valorDisplay.className = "donacion-valor";
-            valorDisplay.textContent = "$1000";
+            valorDisplay.textContent = rescatado.donacion ? `$${rescatado.donacion}` : `$${valoresDonacion[indiceActual]}`;
 
 
 
@@ -144,27 +145,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             
-            const valoresDonacion = [1000, 2000, 5000, 10000];
-            let currentIndex = 0;
-            const updateValorDisplay = () => {
-                valorDisplay.textContent = `$${valoresDonacion[currentIndex]}`;
+            
+
+            const buscarIndice = (valor) => { 
+                return valoresDonacion.findIndex(donacion => donacion === valor); 
             };
 
+            if (rescatado.donacion) { 
+                apadrinarText.textContent = "Modificar donación";
+                indiceActual = buscarIndice(rescatado.donacion); 
+            }
+
+
+            const updateValorDisplay = () => {
+                valorDisplay.textContent = `$${valoresDonacion[indiceActual]}`;
+            };
+
+            updateValorDisplay(); 
+
             decrementBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
+                if (indiceActual > 0) {
+                    indiceActual--;
                     updateValorDisplay();
                 }
             });
 
             incrementBtn.addEventListener('click', () => {
-                if (currentIndex < valoresDonacion.length - 1) {
-                    currentIndex++;
+                if (indiceActual < valoresDonacion.length - 1) {
+                    indiceActual++;
                     updateValorDisplay();
                 }
             });
 
-            updateValorDisplay();
+            // updateValorDisplay();
+
+            aceptarBtn.addEventListener('click', () => { 
+                apadrinarText.textContent = "Modificar donación";
+                const donacion = valoresDonacion[indiceActual]; 
+                let favoritos = JSON.parse(localStorage.getItem('favoritos')) || []; 
+                const index = favoritos.findIndex(fav => fav.id === rescatado.id); 
+                if (index !== -1) { 
+                    favoritos[index].donacion = donacion; 
+                    localStorage.setItem('favoritos', JSON.stringify(favoritos)); 
+                    Swal.fire({ 
+                        title: '¡Donación guardada!', 
+                        text: `Has guardado una donación de $${donacion} mensuales para ${rescatado.nombre}.`, 
+                        icon: 'success', 
+                        confirmButtonColor: '#a5dc86',
+                        confirmButtonText: 'OK' 
+                    }); 
+                }
+                updateValorDisplay();
+            })
 
             // card.appendChild(infoBtn);
             // card.appendChild(apadrinarText); 
@@ -175,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             favoritosContainer.appendChild(card);
 
-
+            
 
 
 

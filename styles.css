@@ -243,8 +243,6 @@ ol {
 
 #visitanos{
     min-height: 100vh;
-    /* padding: 0; */
-
     min-height: 25vh;
 }
 
@@ -272,7 +270,7 @@ ol {
 .card:hover { 
     transform: scale(1.05); 
      z-index: 10; 
-    }
+}
 
 .card img {
     width: 100%;
@@ -332,12 +330,6 @@ ol {
     text-decoration: none;
 }
 
-
-
-/* .informacion{
-    display: none;
-} */
-
 .informacion {
     transition: max-height 0.3s ease, opacity 0.3s ease;
     max-height: 0;
@@ -352,16 +344,13 @@ ol {
 
 
 /*FAVORITOS*/
-.apadrinar-text { 
+.apadrinar { 
     text-align: center; 
     font-size: 1.2em; 
     margin: 10px 0; 
 } 
 
 .donacion-container { 
-   /*  display: flex; 
-    justify-content: center; 
-    align-items: center;  */
     margin: 10px 0; 
     border-radius: 12px;
     border: solid 2px green;
@@ -393,29 +382,26 @@ ol {
     padding: 10px; 
     margin: 10px 0; 
     background-color: forestgreen;
-   width: 80%;
+    width: 80%;
     border-radius: 5px; 
-    
 }
 
 .aceptar-btn:hover, .increment-btn:hover, .decrement-btn:hover { 
     background-color: green; 
-
 }
 
 .increment-btn, .decrement-btn{
     background-color: forestgreen;
-
 }
 
 .sinFavoritos{
     font-size: 26px;
-  color: white;
+    color: white;
 }
 
 .img-sin-favoritos{
     width: 50%;
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 /*RESEÑAS*/
@@ -468,10 +454,6 @@ ol li.dynapuff-font-400 {
     margin-top: 56px;
 }
 
-/* #contacto form input {
-    margin-bottom: 48px;
-} */
-
 #contacto form span {
     margin-bottom: 48px;
 }
@@ -481,8 +463,6 @@ ol li.dynapuff-font-400 {
 }
 
 form {
-    /* max-width: 600px; */
-    /* margin: 0 auto; */
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -520,7 +500,10 @@ button:hover {
 }
 
 form span{
-    color: red;
+    color: white; 
+    text-shadow: 1px 1px 0 red, -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 0px 0 red, 0px 1px 0 red, -1px 0px 0 red, 0px -1px 0 red;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 /*API*/
